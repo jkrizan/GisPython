@@ -17,7 +17,7 @@ def read_from_cover(filename,bbox):
     c = fiona.open(filename, "r")
     geom=[]; value=[]
     print 'Reading ...'
-    for i,f in enumerate(c.filter(bbox)):
+    for i,f in enumerate(c.filter(bbox=bbox)):
         if i%1000 == 0:
             print i
         geom.append(shape(f['geometry']))
